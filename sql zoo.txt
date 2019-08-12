@@ -22,3 +22,25 @@ where name IN ('Estonia', 'Latvia', 'Lithuania')
 //6 For each continent show the continent and number of countries.
 select continent, count(name) from world
 group by continent
+
+///////////////////////////////////
+
+INNER JOIN 
+
+//6. Obtain the cast list for 'Casablanca'.
+select name from actor a
+inner join casting b
+ON a.id = b.actorid
+where b.movieid=11768
+
+//7. Obtain the cast list for the film 'Alien'
+select name from actor a
+inner join casting b
+ON a.id = b.actorid
+where b.movieid=10522
+
+//8. List the films in which 'Harrison Ford' has appeared
+select title from movie a
+inner join casting b
+ON a.id = b.movieid
+where b.actorid = 2216
