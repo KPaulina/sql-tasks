@@ -44,3 +44,9 @@ select title from movie a
 inner join casting b
 ON a.id = b.movieid
 where b.actorid = 2216
+
+//9. List the films where 'Harrison Ford' has appeared - but not in the starring role.
+select title from movie a
+inner join casting b
+ON a.id = b.movieid
+where b.actorid = 2216 and b.ord != 1
