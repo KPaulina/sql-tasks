@@ -50,3 +50,16 @@ select title from movie a
 inner join casting b
 ON a.id = b.movieid
 where b.actorid = 2216 and b.ord != 1
+
+More JOIN operations
+
+//3 List all of the Star Trek movies, include the id, title and yr (all of these movies include the words Star Trek in the title). Order results by year.
+SELECT id, title, yr FROM movie
+WHERE title LIKE '%Star Trek%'
+ORDER BY yr
+
+//10 List the films together with the leading star for all 1962 films.
+SELECT a.title, c.name from movie a
+JOIN casting b ON a.id=b.movieid
+JOIN actor c ON b.actorid=c.id
+where a.yr = 1962 and b.ord = 1
