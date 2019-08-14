@@ -63,3 +63,13 @@ SELECT a.title, c.name from movie a
 JOIN casting b ON a.id=b.movieid
 JOIN actor c ON b.actorid=c.id
 where a.yr = 1962 and b.ord = 1
+
+
+OTHER 
+
+Give the id and the name for the stops on the '4' 'LRT' service.
+SELECT a.id, a.name FROM stops a
+INNER JOIN route b
+ON a.id = b.stop
+WHERE company = 'LRT' and num  = 4
+
